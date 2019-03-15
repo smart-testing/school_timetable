@@ -156,48 +156,53 @@ $(document).on('keyup',function(evt) {
 })
 
 $('.addLessonOverlay .innerBox #exitOverlay').on('click', function () {
-  $('.addLessonOverlay').animate({
-    'opacity': '0'
-  }, 400)
-  setTimeout(function () {
+  // $('.addLessonOverlay').animate({
+  //   'opacity': '0'
+  // }, 400)
+  // setTimeout(function () {
     $('.addLessonOverlay').css('display', 'none')
-  }, 400)
+    $('.addLessonOverlay').css('opacity', 0)
+  // }, 400)
 })
 
 
 $('.editLessonOverlay .innerBox #exitOverlay').on('click', function () {
-  $('.editLessonOverlay').animate({
-    'opacity': '0'
-  }, 400)
-  setTimeout(function () {
+  // $('.editLessonOverlay').animate({
+  //   'opacity': '0'
+  // }, 400)
+  // setTimeout(function () {
     $('.editLessonOverlay').css('display', 'none')
-  }, 400)
+    $('.editLessonOverlay').css('opacity', 0)
+  // }, 400)
 })
 
 $('.importexportOverlay .innerBox #exitOverlay').on('click', function () {
-  $('.importexportOverlay').animate({
-    'opacity': '0'
-  }, 400)
-  setTimeout(function () {
+  // $('.importexportOverlay').animate({
+  //   'opacity': '0'
+  // }, 400)
+  // setTimeout(function () {
     $('.importexportOverlay').css('display', 'none')
-  }, 400)
+    $('.importexportOverlay').css('opacity', 0)
+  // }, 400)
 })
 
 $('.bgBTN').on('click', ()=>{
   hideBackground = !hideBackground
   if (hideBackground) {
     $('.setBGOverlay').css('display','block')
-    $('.setBGOverlay').animate({
-      'opacity': '1'
-    }, 400)
+    $('.setBGOverlay').css('opacity',1)
+    // $('.setBGOverlay').animate({
+    //   'opacity': '1'
+    // }, 400)
   } else {
-    $('.setBGOverlay').animate({
-      'opacity': '0'
-    }, 400)
+    // $('.setBGOverlay').animate({
+    //   'opacity': '0'
+    // }, 400)
 
-    setTimeout(function () {
+    // setTimeout(function () {
       $('.setBGOverlay').css('display', 'none')
-    }, 400)
+      $('.setBGOverlay').css('opacity', 0)
+    // }, 400)
   }
 })
 
@@ -273,12 +278,13 @@ $('.addBG').on('click',function() {
     })
   }
 
-  $('.setBGOverlay').animate({
-    'opacity': '0'
-  }, 400)
-  setTimeout(function () {
+  // $('.setBGOverlay').animate({
+  //   'opacity': '0'
+  // }, 400)
+  // setTimeout(function () {
     $('.setBGOverlay').css('display', 'none')
-  }, 400)
+    $('.setBGOverlay').css('opacity', '0')
+  // }, 400)
 
   hideBackground = false
 
@@ -838,13 +844,14 @@ $('.addNewLesson').on('click', () => {
   $('#day').val('Day')
   $('#bgColor').val('')
 
-  $('.addLessonOverlay').animate({
-    'opacity': '0'
-  }, 400)
-
-  setTimeout(function () {
+  // $('.addLessonOverlay').animate({
+  //   'opacity': '0'
+  // }, 400)
+  //
+  // setTimeout(function () {
     $('.addLessonOverlay').css('display', 'none')
-  }, 400)
+    $('.addLessonOverlay').css('opacity', 0)
+  // }, 400)
 
   readData() // -> Refresh table
 })

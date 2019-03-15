@@ -6,15 +6,21 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder",
-    "package": "electron-packager . Timetable --platform=all --asar --icon=256.ico"
+    "package": "electron-packager . Timetable --platform=all --asar --icon=256.ico",
+    "test": "mocha"
   },
   "author": "Patrick&Daniel",
   "license": "ISC",
   "devDependencies": {
-	"electron-builder": "^20.28.1"
+    "chai-as-promised": "^7.1.1",
+    "chai-style": "^1.0.3",
+    "electron": "^4.0.7",
+    "electron-builder": "^20.28.1",
+    "mocha": "^6.0.2",
+    "spectron": "^5.0.0"
   },
   "build": {
-    "appId": "timetable.io",
+    "appId": "timetable.education",
     "mac": {
       "category": "timetable.education",
       "target": "default",
@@ -30,23 +36,11 @@
     }
   },
   "dependencies": {
+    "ajv": "^6.10.0",
     "electron-packager": "^12.1.0",
-    "jquery": "^3.3.1"
-  },
-  "build": {
-    "appId": "timetable.education",
-    "mac": {
-      "category": "timetable.education",
-      "target":"default",
-      "icon": "256.ico"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "256.ico"
-    },
-    "linux": {
-      "target":"AppImage",
-      "icon":"256.ico"
-    }
+    "electron-prebuilt": "^1.4.13",
+    "jquery": "^3.3.1",
+    "mocha": "^6.0.2",
+    "chai": "^3.5.0"
   }
 }
