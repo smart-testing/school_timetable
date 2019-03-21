@@ -12,7 +12,10 @@
   "author": "Patrick&Daniel",
   "license": "ISC",
   "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.11.4",
     "chai-as-promised": "^7.1.1",
+    "chai-roughly": "latest",
     "chai-style": "^1.0.3",
     "electron": "^4.0.7",
     "electron-builder": "^20.28.1",
@@ -38,7 +41,6 @@
   "dependencies": {
     "ajv": "^6.10.0",
     "electron-packager": "^12.1.0",
-    "electron-prebuilt": "^1.4.13",
     "jquery": "^3.3.1",
     "mocha": "^6.0.2",
     "chai": "^3.5.0"
