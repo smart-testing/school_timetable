@@ -3,37 +3,28 @@ const helpers = require('./global-setup');
 const lessons = require('./lessons');
 const path = require('path');
 
-const describe = global.describe;
-const it = global.it;
-const beforeEach = global.beforeEach;
-const afterEach = global.afterEach;
-
 let app = null;
 
-suitCaseWithAppInit = function() {
-  before(function () {
-    return helpers.startApplication({
-      args: [path.join(__dirname, '..')]
-    }).then(function (startedApp) {
-      app = startedApp;
-      return generateContent();
-    })
-
+const suitCaseWithAppInit = function() {
+  before(async function () {
+    app = await helpers.startApplication({ args: [path.join(__dirname, '..')] });
+    return generateContent();
   });
-  after(function () {
-    return removeContent().then(() => helpers.stopApplication(app));
+  after(async function () {
+    await removeContent();
+    return await helpers.stopApplication(app);
   });
 };
 
-generateContent = function () {
+const generateContent = function () {
   return addLesson(lessons.defaultLesson);
 };
 
-removeContent = function () {
+const removeContent = function () {
   return removeLesson(lessons.getSelector(lessons.defaultLesson));
 };
 
-addLesson = function (options) {
+const addLesson = function (options) {
   const addButton = '.addBTN';
   const lessonName = '.addLessonOverlay #lesson_name';
   const classRoom = '.addLessonOverlay #class_room';
@@ -58,7 +49,7 @@ addLesson = function (options) {
       .$(add).click();
 };
 
-removeLesson = function (selector) {
+const removeLesson = function (selector) {
   const delButton = '.topbar .deleteBTN';
   const delItem = selector + ' .deleteItem';
 
@@ -68,7 +59,7 @@ removeLesson = function (selector) {
       .$(delItem).click();
 };
 
-describe('Timetable app', function () {
+describe('Timetable app test', function () {
 
   helpers.setupTimeout(this);
 
